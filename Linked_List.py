@@ -105,34 +105,34 @@ class LinkedList:
       return
     return sem.getValue()
 
-# Initialize the list
+# Membuat objek dari class LinkedList
 test_list = LinkedList()
 
-# Adding values to the list
+# Menambah beberapa value ke test_list
 test_list.add(10)
 test_list.add(20)
 test_list.add(30)
 
-# Inserting a value at a specific index
+# Memasukkan sebuah value ke test_list dengan index yang spesifik
 test_list.insert(15, 1)
 
-# Displaying values in the linked list
-print('Values in the linked list:')
+# Display Linked List
+print('Semua nilai di test_list:')
 for i in range(4):
   print(test_list.get(i))
 
-# Swapping two values in the list
+# Mengubah posisi dua buah value dengan menggunakan indexnya
 test_list.swap(1, 3)
 
-# List after swapping
-print("Linked List values after swap:")
+# List setelah diubah
+print("test_list setelah menggunakan fungsi swap() :")
 for i in range(4):
     print(test_list.get(i))
 
-# Removing a specific value at a specific index
+# Menghapus sebuah nilai dengan index yang spesifik
 test_list.remove(2)
 
-# The list after removing a specific value at a specific index
-print("Linked List values after removal:")
+# List setelah menggunakan fungsi remove
+print("test_list setelah menghapus sebuah nilai spesifik menggunakan fungsi remove() :")
 for i in range(3):
     print(test_list.get(i))
