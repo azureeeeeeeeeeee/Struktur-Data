@@ -15,6 +15,7 @@ class Node:
 class Stack:
     def __init__(self):
         self.first = None
+        self.tes = 0
       
     def push(self, value):
         sem = self.first
@@ -25,6 +26,7 @@ class Stack:
             while sem.getNext():
                 sem = sem.getNext()
             sem.setNext(newNode)
+            self.tes +=1
 
     def hasPop(self):
         if self.first is None:
@@ -42,7 +44,9 @@ class Stack:
             while sem.getNext():
                 prev = sem
                 sem = sem.getNext()
+            print("Nilai yang di POP: ",sem.getValue())
             prev.setNext(sem.getNext())
+            self.tes -= 1
         return True
     
     def swap(self, index1, index2):
