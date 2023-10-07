@@ -28,20 +28,38 @@ class Tree:
         if self.root is None:
             self.root = node
         else:
-            self.insertrecursive(self.root, key)
+            self.insertrecursive(self.root,key)
 
     def insertrecursive(self, nodenow, key):
         if key < nodenow.key:
             if nodenow.getLeft() is None:
                 nodenow.setLeft(Node(key))
             else:
-                self._insert_recursive(nodenow.getLeft(), key)
+                self.insertrecursive(nodenow.getLeft(), key)
         else:
             if nodenow.getRight() is None:
                 nodenow.setRight(Node(key))
             else:
-                self._insert_recursive(nodenow.getRight(), key)
+                self.insertrecursive(nodenow.getRight(), key)
+
+    def remove(self,key):
+        node = Node(key)
+        if self.root:
+            self.root = None
+
+        else:
+            self.removerecursive(self,key)
+
+    def removerecursive(self, nodenow, key):
+        if key < nodenow.key:
+            if nodenow.getLeft(key):
+                nodenow.setLeft(Node(None))
+        else:
+            if nodenow.getRight(key):
+                nodenow.setRight(Node(None))
+
 
 test = Tree()
 test.insert(2)
 test.insert(1)
+test.remove(1)
